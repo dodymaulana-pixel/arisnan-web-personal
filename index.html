@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arisnan Saputra - Bali Private Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* CSS DARI style.css YANG SUDAH DIMODIFIKASI */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+        :root {
+            --warna-utama: #089f00; /* Hijau Kebiruan (Laut/Alam) */
+            --warna-aksen: #00bd16; /* Emas (Budaya Bali) */
+            --warna-gelap: #000000; /* Biru Gelap/Tanah */
+            --warna-terang: #000000; /* Abu Terang */
+            --warna-text-gelap: #ffffff; /* Teks lebih gelap */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--warna-text-gelap);
+            background-color: #000000;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* --- HEADER & NAVIGASI --- */
+        header {
+            background: var(--warna-gelap);
+            color: rgb(248, 241, 241);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-pic-header {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 10px;
+            border: 2px solid var(--warna-aksen);
+        }
+
+        .bali-accent {
+            color: var(--warna-aksen);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            padding: 5px 10px;
+            transition: background-color 0.3s, color 0.3s;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            color: var(--warna-gelap);
+            background-color: var(--warna-aksen);
+        }
+
+        /* --- SECTIONS UMUM & TOMBOL --- */
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .dark-bg {
+            background-color: var(--warna-terang);
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 50px;
+            color: var(--warna-utama);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .primary-btn {
+            background-color: var(--warna-aksen);
+            color: var(--warna-gelap);
+        }
+
+        .primary-btn:hover {
+            background-color: #f0c300;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* --- PROFIL HERO BARU (FOKUS) --- */
+        .profil-hero-section {
+            /* Background yang lebih dramatis */
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), 
+                        url('images/hero-bali.jpg') no-repeat center center/cover;
+            min-height: 85vh; /* Lebih fokus di layar */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: rgb(6, 255, 98);
+            padding: 60px 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-pic-center {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 6px solid var(--warna-aksen); /* Border Emas */
+            box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.2); /* Efek cahaya di belakang foto */
+        }
+
+        .profil-hero-section h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            color: rgb(255, 255, 255);
+        }
+
+        .profil-hero-section h2 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 25px;
+            color: var(--warna-aksen);
+        }
+
+        .tagline-hero {
+            font-size: 1.1rem;
+            max-width: 400px;
+            margin: 0 auto 30px auto;
+        }
+        
+        .whatsapp-btn-hero {
+            background-color: #25D366;
+            color: rgb(8, 8, 8);
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+
+        .whatsapp-btn-hero:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+        }
+
+        .scroll-down-link {
+            color: rgba(0, 0, 0, 0.8);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+            margin-top: 15px;
+            display: block;
+        }
+
+        .scroll-down-link:hover {
+            color: rgb(0, 0, 0);
+        }
+        .scroll-down-link i {
+            margin-left: 5px;
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+
+        /* --- TENTANG RINGKAS --- */
+        .tentang-ringkas {
+            max-width: 800px;
+            margin: 0 auto 25px auto;
+            font-size: 1rem;
+            text-align: center;
+            color: var(--warna-text-gelap);
+            padding: 0 15px;
+            line-height: 1.8;
+        }
+
+        .keunggulan-list-inline {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px 30px;
+            margin-top: 20px;
+            padding: 0;
+            text-align: center;
+        }
+
+        .keunggulan-list-inline li {
+            font-weight: 600;
+            color: var(--warna-utama);
+        }
+        .keunggulan-list-inline i {
+            color: var(--warna-aksen);
+            margin-right: 5px;
+        }
+
+        /* --- LAYANAN (GRID BARU) --- */
+        .layanan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .clickable-item {
+            display: block;
+            background: rgb(0, 0, 0);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+            text-align: center;
+            text-decoration: none;
+            color: var(--warna-text-gelap);
+            border: 1px solid #000000;
+        }
+
+        .clickable-item:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 12px 30px rgba(255, 255, 255, 0.2);
+            border: 1px solid var(--warna-utama);
+        }
+
+        .icon-layanan {
+            font-size: 3.5rem;
+            color: var(--warna-utama);
+            margin-bottom: 20px;
+            transition: color 0.3s;
+        }
+
+        .clickable-item:hover .icon-layanan {
+            color: var(--warna-aksen);
+        }
+
+        .detail-link {
+            display: block;
+            margin-top: 15px;
+            font-weight: 700;
+            color: var(--warna-utama);
+        }
+
+        .clickable-item:hover .detail-link {
+            color: var(--warna-aksen);
+        }
+
+        /* --- GALERI --- */
+        .text-center {
+            text-align: center;
+        }
+
+        .galeri-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .galeri-grid img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .galeri-grid img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+
+
+        /* --- KONTAK & SOSIAL MEDIA --- */
+        #kontak p {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--warna-text-gelap);
+            font-size: 1.1rem;
+        }
+
+        .contact-links {
+            text-align: center;
+        }
+
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: rgb(255, 255, 255);
+            margin-right: 20px;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+        }
+
+        .instagram-btn {
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+            color: rgb(255, 255, 255);
+        }
+
+        .instagram-btn:hover {
+            opacity: 0.9;
+        }
+
+        .contact-links .btn i {
+            margin-right: 8px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--warna-gelap);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 1rem;
+        }
+        
+        /* DETAIL PAGE: CSS TAMBAHAN UNTUK DETAIL LAYANAN */
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        .detail-card {
+            background: rgb(0, 0, 0);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .detail-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 2px solid var(--warna-utama);
+        }
+        .detail-card h3 {
+            color: var(--warna-utama);
+            margin-bottom: 10px;
+        }
+        .link-lokasi {
+            margin-top: 15px;
+            display: block;
+            color: var(--warna-aksen);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .back-to-home {
+            margin-top: 50px;
+        }
+
+        /* --- MEDIA QUERIES (RESPONSIF) --- */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+            }
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap; 
+                justify-content: center;
+            }
+            nav ul li a {
+                margin: 5px 10px;
+                font-size: 0.9rem;
+            }
+            header h1 {
+                font-size: 1.5rem;
+            }
+            .profile-pic-header {
+                width: 30px;
+                height: 30px;
+            }
+            .profil-hero-section h1 {
+                font-size: 2.5rem;
+            }
+            .profil-hero-section h2 {
+                font-size: 1rem;
+            }
+            .profile-pic-center {
+                width: 120px;
+                height: 120px;
+            }
+            .tentang-ringkas {
+                font-size: 0.95rem;
+            }
+            .whatsapp-btn-hero {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+            .section-padding {
+                padding: 60px 0;
+            }
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            .whatsapp-btn, .instagram-btn {
+                margin: 10px 0;
+                width: 90%;
+            }
+            .detail-grid {
+                 grid-template-columns: 1fr;
+                 gap: 30px;
+            }
+            .keunggulan-list-inline {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="main-content">
+        <header>
+            <div class="container">
+                <h1>
+                    <img src="profile.jpg" alt="Foto Profil" class="profile-pic-header">
+                    ARISNAN<span class="bali-accent">SAPUTRA</span>
+                </h1>
+                <nav>
+                    <ul>
+                        <li><a href="#beranda" onclick="showSection('home', 'beranda')">Profil</a></li>
+                        <li><a href="#layanan" onclick="showSection('home', 'layanan')">Layanan</a></li>
+                        <li><a href="#galeri" onclick="showSection('home', 'galeri')">Galeri</a></li>
+                        <li><a href="#kontak" onclick="showSection('home', 'kontak')">Kontak</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div id="home-view">
+            
+            <section id="beranda" class="profil-hero-section">
+                <div class="container hero-content">
+                    
+                    <img src="images/WhatsApp Image 2025-10-03 at 17.37.18.jpeg" alt="Foto Profil Pemandu" class="profile-pic-center">
+
+                    <h1>ARISNAN <span class="bali-accent">SAPUTRA</span></h1>
+                    <h2>Driver berpengalaman di pulau Bali </h2>
+
+                    <p class="tagline-hero">Petualangan Bali Anda Dimulai Di Sini! Layanan Personal, Aman, dan Berkesan.</p>
+                    
+                    <div class="center-buttons">
+                        <a href="https://wa.me/+6281918071107" target="_blank" class="btn whatsapp-btn-hero">
+                            <i class="fab fa-whatsapp"></i> Chat Saya Sekarang
+                        </a>
+                    </div>
+                    
+                    <a href="#layanan" class="scroll-down-link" onclick="showSection('home', 'layanan')">
+                        Lihat Semua Layanan <i class="fas fa-chevron-down"></i>
+                    </a>
+                </div>
+            </section>
+
+            <section id="tentang" class="section-padding dark-bg">
+                <div class="container">
+                    <h2 style="margin-bottom: 30px;">Tentang Saya</h2>
+                    
+                    <p class="tentang-ringkas">
+                        Halo! Saya ARISNAN SAPUTRA, Driver Pribadi Berlisensi yang siap mengantar Anda menjelajahi Bali, keahlian saya adalah memastikan perjalanan Anda selalu aman, nyaman, dan efisien.
+                         Baik Anda perlu transfer Bandara yang cepat, atau ingin diantar keliling Bali seharian penuh, saya siap menjadi driver terpercaya Anda.
+                         Pesan sekarang untuk mendapatkan layanan personal yang cepat, handal, dan penuh energi baru
+                    </p>
+                    
+                    <ul class="keunggulan-list-inline">
+                        <li><i class="fas fa-check-circle"></i> Rencana Fleksibel</li>
+                        <li><i class="fas fa-check-circle"></i> Fasih Berbahasa Inggris</li>
+                        <li><i class="fas fa-check-circle"></i> Kendaraan Nyaman</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="layanan" class="section-padding">
+                <div class="container">
+                    <h2>Pilih Petualangan Anda</h2>
+                    <div class="layanan-grid">
+
+                        <a href="https://wa.me/+6281918071107" target="_blank" class="clickable-item">
+                            <i class="icon-layanan fas fa-route"></i>
+                            <h3>Tour Sehari Penuh (Private)</h3>
+                            <p>Jelajahi Bali sesuai keinginan Anda! Kendaraan pribadi, rute fleksibel, dan pemandu yang antusias.</p>
+                            <span class="detail-link"onclick style="color: #25D366;">Pesan Cepat via WA <i class="fab fa-whatsapp"></i></span>
+                        </a>
+
+                        <a href="https://wa.me/+6281918071107" target="_blank" class="clickable-item">
+                            <i class="icon-layanan fas fa-taxi"></i>
+                            <h3>Antar Jemput Bandara/Hotel</h3>
+                            <p>Transfer yang nyaman, tepat waktu, dan aman ke mana pun di Bali. Layanan 24 Jam.</p>
+                            <span class="detail-link" onclick style="color: #25D366;">Pesan Cepat via WA <i class="fab fa-whatsapp"></i></span>
+                        </a>
+
+                        <a href="https://wa.me/+6281918071107" target="_blank" class="clickable-item">
+                            <i class="icon-layanan fas fa-mountain"></i>
+                            <h3>Trekking & Petualangan Alam</h3>
+                            <p>Rasakan adrenalin mendaki Batur saat matahari terbit atau menaklukkan Arung Jeram Ayung.</p>
+                             <span class="detail-link" onclick style="color: #25D366;">Pesan Cepat via WA <i class="fab fa-whatsapp"></i></span>
+                        </a>
+
+                    </div>
+                </div>
+            </section>
+
+            <section id="galeri" class="section-padding dark-bg">
+                <div class="container">
+                    <h2>Galeri Kenangan</h2>
+                    <div class="galeri-grid">
+                        <img src="images/taman ujunn.jpeg" alt="Pura Tanah Lot">
+                        <img src="images/pariwisata.jpeg" alt="Sawah Terasering">
+                        <img src="images/titragngg.jpeg" alt="Sunset Pantai">
+                        <img src="images/kuta.jpeg" alt="Air Terjun">
+                        <img src="images/tirta.jpeg" alt="Pura Agung">
+                    </div>
+                </div>
+            </section>
+
+            <section id="kontak" class="section-padding">
+                <div class="container">
+                    <h2>Hubungi Saya Langsung</h2>
+                    <p>Siap merencanakan perjalanan impian Anda di Bali? Hubungi Arisnan Saputra sekarang!</p>
+                    <div class="contact-links">
+                        <a href="https://wa.me/+6281918071107" target="_blank" class="btn whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Chat WhatsApp
+                        </a>
+                        <a href="https://instagram.com/arisnanaputra" target="_blank" class="btn instagram-btn">
+                            <i class="fab fa-instagram"></i> Kunjungi Instagram
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+
+        <footer>
+            <div class="container">
+                <p>© 2025 Arisnan Saputra - Driver Berpengalaman Bali</p>
+            </div>
+        </footer>
+    </div>
+    <script>
+        // FUNGSI JAVASCRIPT UNTUK NAVIGASI SATU HALAMAN (TETAP SAMA)
+        
+        function showSection(targetType, sectionIdToScroll = null) {
+            const homeView = document.getElementById('home-view');
+            // Hanya menyertakan detail mobil dan alam karena layanan fokus hanya 3
+            const detailSections = ['detail-mobil', 'detail-alam']; 
+
+            // 1. Sembunyikan semua detail sections
+            detailSections.forEach(id => {
+                const detail = document.getElementById(id);
+                if (detail) detail.style.display = 'none';
+            });
+
+            // 2. Kontrol tampilan
+            if (targetType === 'home') {
+                homeView.style.display = 'block';
+                
+                setTimeout(() => {
+                    if (sectionIdToScroll) {
+                        const targetElement = document.getElementById(sectionIdToScroll);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                }, 50);
+
+            } else {
+                homeView.style.display = 'none';
+                
+                const detailSection = document.getElementById(targetType);
+                if (detailSection) {
+                    detailSection.style.display = 'block';
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            }
+        }
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection('home');
+
+            // Fungsi untuk Scroll Halus (Smooth Scroll)
+            document.querySelectorAll('nav a[href^="#"], .btn[href^="#"], .scroll-down-link[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    if (this.getAttribute('href').startsWith('#')) {
+                        e.preventDefault();
+                    }
+                });
+            });
+            
+        });
+    </script>
+</body>
+</html>
